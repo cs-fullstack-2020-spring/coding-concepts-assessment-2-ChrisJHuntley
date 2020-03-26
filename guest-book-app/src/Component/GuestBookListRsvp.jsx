@@ -17,11 +17,12 @@ class GuestBookListRsvp extends Component {
             <div className='Rsvp'>
                 <h2>Guest With Rsvp</h2>
                 <h1>Rsvped</h1>
+                  {/* begin our map function */}
                 {
                     GuestList.map((Rsvp, idx) => {
                         return (
                             <div key={idx}>
-                                 
+                                  {/* Call and list properties from array */}
                                 <p>Guest Name:{Rsvp.guestName}</p>
                                 <p>Guest Number:{Rsvp.guestNumber}</p>
                                 <p>Rsvped:{Rsvp.Rsvped? 'false':'true'}</p>

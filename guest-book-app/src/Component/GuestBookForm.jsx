@@ -24,6 +24,7 @@ class GuestBookForm extends Component {
         }
     }
     // create event listener so it will know when and what to push
+    // ToDo -go back and try to fix 
     addGuest = (event) => {
         event.preventDefault();
         this.props.pushToArray(this.state)
