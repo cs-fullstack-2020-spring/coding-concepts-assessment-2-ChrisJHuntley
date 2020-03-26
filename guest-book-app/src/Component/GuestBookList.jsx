@@ -1,7 +1,7 @@
 import React,{ Component } from "react";
-import GuestBookForm from './GuestBookForm'
+ 
 
-class AppContainer extends Component{
+class GuestBookList extends Component{
     constructor(props){
         super(props);
         this.state={
@@ -13,16 +13,28 @@ class AppContainer extends Component{
      
     
     render(){
-        const GuestList=this.props.listOfGuests
+        const GuestList=this.props.NoRsvp
+        // console.log(`${this.props.GuestList}`)
 
 
         return(
-            <div>
-                <h1>guestbooklist</h1>
+            <div className='NoRsvp'>
+                <h2>Guest Without Rsvp</h2>
+                <h1>waiting for response...</h1>
+
                 {
-                    GuestList.map((guest)=>{
+                    GuestList.map((guest, idx)=>{
                         return(
-                            <GuestBookForm/>
+                            
+                            <div key={idx}>
+                                 
+                                <p>guest Name:{guest.guestName}</p>
+                                <p>guest Number:{guest.guestNumber}</p>
+                                <p>Rsvped:{guest.Rsvped? 'true': 'false'}</p>
+
+                            </div>
+
+                             
                         )
                     })
                 }
@@ -30,4 +42,4 @@ class AppContainer extends Component{
         )
     }
 }
-export default AppContainer
+export default GuestBookList

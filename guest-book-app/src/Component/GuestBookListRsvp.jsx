@@ -1,18 +1,37 @@
-import React,{ Component } from "react";
-
-class AppContainer extends Component{
-    constructor(props){
+import React, { Component } from "react";
+ 
+class GuestBookListRsvp extends Component {
+    constructor(props) {
         super(props);
-        this.state={
+        this.state = {
 
         }
     }
-    render(){
-        return(
-            <div>
-                <h1></h1>
+    render() {
+        const GuestList = this.props.HasRsvp
+        // sanity
+        // console.log(`${this.props.GuestList}`)
+
+
+        return (
+            <div className='Rsvp'>
+                <h2>Guest With Rsvp</h2>
+                <h1>Rsvped</h1>
+                {
+                    GuestList.map((Rsvp, idx) => {
+                        return (
+                            <div key={idx}>
+                                 
+                                <p>Guest Name:{Rsvp.guestName}</p>
+                                <p>Guest Number:{Rsvp.guestNumber}</p>
+                                <p>Rsvped:{Rsvp.Rsvped? 'false':'true'}</p>
+
+                            </div>
+                        )
+                    })
+                }
             </div>
         )
     }
 }
-export default AppContainer
+export default GuestBookListRsvp
